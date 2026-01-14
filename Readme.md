@@ -1,8 +1,8 @@
 # Личный проект «Седона»
 
 * Студент: [Диана Бродовая](https://up.htmlacademy.ru/htmlcss-individual/2/user/56395).
-* Наставник: `Неизвестно`.
-
+* Наставник: [Дина Шарипова](https://htmlacademy.ru/profile/id1418957).
+* Проект: [Седона](https://dianabrodovaya.github.io/56395-sedona-2/).
 ---
 
 _Не удаляйте и не обращайте внимание на файлы:_<br>
