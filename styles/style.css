@@ -22,7 +22,7 @@
 
 img {
   max-width: 100%;
-  height: auto;
+  /* height: auto; */
 }
 
 html {
@@ -149,12 +149,13 @@ body {
 
 .navigation-user .navigation-button {
   margin-left: 20px;
+  min-width: 160px;
 }
 
 .button {
   border: none;
   cursor: pointer;
-  padding: 8px 20px;
+  padding: 8px 15px;
   font-family: inherit;
   font-size: 16px;
   line-height: 20px;
@@ -162,8 +163,8 @@ body {
   font-weight: 700;
   color: #ffffff;
   background-color: #756157;
-  min-width: 160px;
   border-radius: 4px;
+  text-align: center;
 }
 
 .hero {
@@ -215,6 +216,7 @@ body {
   background-color: rgba(131, 179, 211, 0.12);
   list-style: none;
   width: 400px;
+  flex-grow: 1;
 }
 
 .advantages-text {
@@ -439,8 +441,8 @@ body {
 .hotels-list {
   margin: 0;
   padding: 40px 0;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
@@ -450,11 +452,19 @@ body {
   padding: 20px;
   border: 1px solid #E6E6E6;
   border-radius: 4px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 1fr auto auto auto;
+  gap: 16px 20px;
+}
+
+.hotel-card-link {
+  grid-column: 1/-1;
 }
 
 .hotel-card .hotel-card-title {
   text-transform: none;
-  margin: 16px 0;
+  margin: 0;
 }
 
 .hotel-card a {
@@ -467,7 +477,11 @@ body {
 
 .hotel-card p,
 .hotel-card button {
-  margin: 0 0 16px 0;
+  margin: 0;
+}
+
+.hotel-card-price {
+  text-align: right;
 }
 
 .hotel-card .to-favourites {
@@ -480,7 +494,7 @@ body {
   text-transform: uppercase;
   background-color: #F2F2F2;
   display: inline-block;
-  padding: 9px 22px 8px 23px;
+  padding: 8px 22px;
   margin: 0;
 }
 
@@ -488,16 +502,13 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-}
-
-.pagination-item {
-  list-style: none;
-  margin-right: 8px;
+  list-style-type: none;
+  gap: 8px;
 }
 
 .pagination-link {
   display: block;
-  width: 60px;
+  min-width: 60px;
   height: 60px;
   background-color: #82B3D3;
   color: #ffffff;
@@ -506,7 +517,7 @@ body {
   font-weight: 700;
   text-decoration: none;
   text-align: center;
-  padding-top: 11px;
+  padding: 11px 10px 0;
 }
 
 .pagination-link.current {
