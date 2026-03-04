@@ -59,58 +59,92 @@
           <section class="filters">
             <h2 class="visually-hidden">Фильтры поиска</h2>
             <form class="filters-form" action="https://echo.htmlacademy.ru/" method="get">
-              <fieldset class="filters-form-group">
-                <legend class="filters-form-title">Инфраструктура</legend>
-                <ul class="filters-form-list">
-                  <li class="filters-form-item">
-                    <label class="control">
-                      <input class="control-input" type="checkbox" name="pool" checked>Бассейн
-                    </label>
-                  </li>
-                  <li class="filters-form-item">
-                    <label class="control">
-                      <input class="control-input" type="checkbox" name="parking" checked>Парковка
-                    </label>
-                  </li>
-                  <li class="filters-form-item">
-                    <label class="control">
-                      <input class="control-input" type="checkbox" name="wi-fi">Wi-Fi
-                    </label>
-                  </li>
-                </ul>
-              </fieldset>
-              <fieldset class="filters-form-group">
-                <legend class="filters-form-title">Тип жилья</legend>
-                <ul class="filters-form-list">
-                  <li class="filters-form-item">
-                    <label class="control">
-                      <input class="control-input" type="radio" name="type-of-housing" value="hotel" checked>Гостиница
-                    </label>
-                  </li>
-                  <li class="filters-form-item">
-                    <label class="control">
-                      <input class="control-input" type="radio" name="type-of-housing" value="motel">Мотель
-                    </label>
-                  </li>
-                  <li class="filters-form-item">
-                    <label class="control">
-                      <input class="control-input" type="radio" name="type-of-housing" value="appartments">Аппартаменты
-                    </label>
-                  </li>
-                </ul>
-              </fieldset>
-              <fieldset class="filters-form-group">
-                <legend class="filters-form-title">Стоимость, ₽:</legend>
-                <label class="visually-hidden" for="min-value">От</label>
-                <input class="text-input" type="text" value="0" id="min-value">
-                <label class="visually-hidden" for="max-value">До</label>
-                <input class="text-input" type="text" value="9000" id="max-value">
-              </fieldset>
-              <fieldset class="filters-form-group">
-                <legend class="filters-form-title visually-hidden">Действия:</legend>
-                <button class="button button-second filters-submit-button" type="submit">Применить</button>
-                <button class="button button-transparent filters-reset-button" type="reset">Сбросить</button>
-              </fieldset>
+              <div class="form-column">
+                <fieldset class="filters-form-group">
+                  <legend class="filters-form-title">Инфраструктура:</legend>
+                  <ul class="filters-form-list">
+                    <li class="filters-form-item">
+                      <label class="control">
+                        <input class="visually-hidden control-input" type="checkbox" name="pool" checked>
+                        <span class="control-mark"></span>
+                        <span class="control-label">Бассейн</span>
+                      </label>
+                    </li>
+                    <li class="filters-form-item">
+                      <label class="control">
+                        <input class="visually-hidden control-input" type="checkbox" name="parking" checked>
+                        <span class="control-mark"></span>
+                        <span class="control-label">Парковка</span>
+                      </label>
+                    </li>
+                    <li class="filters-form-item">
+                      <label class="control">
+                        <input class="visually-hidden control-input" type="checkbox" name="wi-fi">
+                        <span class="control-mark"></span>
+                        <span class="control-label">Wi-Fi</span>
+                      </label>
+                    </li>
+                  </ul>
+                </fieldset>
+                <fieldset class="filters-form-group">
+                  <legend class="filters-form-title">Тип жилья:</legend>
+                  <ul class="filters-form-list">
+                    <li class="filters-form-item">
+                      <label class="control">
+                        <input class="visually-hidden control-input" type="radio" name="type-of-housing" value="hotel" checked>
+                        <span class="control-mark"></span>
+                        <span class="control-label">Гостиница</span>
+                      </label>
+                    </li>
+                    <li class="filters-form-item">
+                      <label class="control">
+                        <input class="visually-hidden control-input" type="radio" name="type-of-housing" value="motel">
+                        <span class="control-mark"></span>
+                        <span class="control-label">Мотель</span>
+                      </label>
+                    </li>
+                    <li class="filters-form-item">
+                      <label class="control">
+                        <input class="visually-hidden control-input" type="radio" name="type-of-housing" value="appartments">
+                        <span class="control-mark"></span>
+                        <span class="control-label">Аппартаменты</span>
+                      </label>
+                    </li>
+                  </ul>
+                </fieldset>
+              </div>
+              <div class="form-column">
+                <fieldset class="filters-form-group">
+                  <legend class="filters-form-title">Стоимость, ₽:</legend>
+                  <div class="range">
+                    <div class="range-wrapper-inputs">
+                      <div class="range-wrapper-input">
+                        <label class="range-input-label" for="min-price">от</label>
+                        <input class="range-input range-input-min" type="number" value="0" name="min-price" id="min-price">
+                      </div>
+                      <div class="range-wrapper-input">
+                        <label class="range-input-label" for="max-price">до</label>
+                        <input class="range-input range-input-max" type="number" value="9000" name="max-price" id="max-price">
+                      </div>
+                    </div>
+                    <div class="range-scale">
+                      <div class="range-bar" style="left: 0; width: 226px">
+                        <button class="range-toggle toggle-min" type="button">
+                          <span class="visually-hidden">Изменить минимальную цену</span>
+                        </button>
+                        <button class="range-toggle toggle-max" type="button">
+                          <span class="visually-hidden">Изменить максимальную цену</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset class="filters-form-group filters-form-group-buttons">
+                  <legend class="filters-form-title visually-hidden">Действия:</legend>
+                  <button class="button button-second filters-submit-button" type="submit">Применить</button>
+                  <button class="button button-transparent filters-reset-button" type="reset">Сбросить</button>
+                </fieldset>
+              </div>
             </form>
           </section>
         </header>
@@ -293,9 +327,9 @@
 
         <section class="footer-logo">
           <h2 class="visually-hidden">Логотип</h2>
-          <a href="https://htmlacademy.ru/">
-            <svg class="footer-logo-icon" width="115" height="33" viewBox="0 0 115 33" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
+          <a class="html-academy-logo" href="https://htmlacademy.ru/">
+            <svg role="img" aria-label="логотип разработчика HTML Academy" width="115" height="33" viewBox="0 0 115 33"
+              fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 12.9V15.5H2.5V12.9H0Z" fill="black" />
               <path
                 d="M11.6 4.5C10 4.5 8.8 5.2 8 6.2H7.9V0H5.9V15.5H7.9V10.2C7.9 8.1 9.2 6.6 11.2 6.6C13 6.6 14.1 8 14.1 9.8V15.5H16.1V9.4C16.2 6.4 14.3 4.5 11.6 4.5Z"

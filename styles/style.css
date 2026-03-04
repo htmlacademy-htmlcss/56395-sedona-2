@@ -22,7 +22,8 @@
 
 img {
   max-width: 100%;
-  /* height: auto; */
+  height: auto;
+  object-fit: contain;
 }
 
 html {
@@ -50,8 +51,8 @@ body {
 
 .visually-hidden {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  width: 0;
+  height: 0;
   margin: -1px;
   border: 0;
   padding: 0;
@@ -160,6 +161,8 @@ body {
 
 .navigation-icon:focus-visible {
   outline: 2px solid #000000;
+    outline-offset: -2px;
+
 }
 
 .navigation-icon.search {
@@ -193,15 +196,18 @@ body {
 .navigation-user .navigation-button {
   margin-left: 20px;
   min-width: 160px;
+  padding: 8px 34px;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .button {
   border: none;
   cursor: pointer;
-  padding: 8px 15px;
+  padding: 8px 50px;
   font-family: inherit;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 20px;
+  line-height: 36px;
   text-transform: uppercase;
   font-weight: 700;
   color: #ffffff;
@@ -241,9 +247,9 @@ body {
   opacity: 60%;
 }
 
-.button-transparent:focus-visible {
+/* .button-transparent:focus-visible {
   outline: 3px solid #83B3D3;
-}
+} */
 
 .button:active {
   color: rgba(255, 255, 255, 0.3)
@@ -317,7 +323,7 @@ body {
 }
 
 .advantages-title {
-  max-width: 200px;
+  max-width: 172px;
   margin: 0 auto;
 }
 
@@ -417,12 +423,33 @@ body {
   color: #ffffff;
 }
 
+.subscribe-form {
+  display: flex;
+  width: 100%;
+  max-width: 684px;
+  margin: 0 auto;
+}
+
 .email-input {
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  opacity: 0.6;
+  color: rgba(0, 0, 0, 0.6);
   font-family: inherit;
+  padding: 12px 20px;
+  background-color: #F2F2F2;
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  border-radius: 4px 0 0 4px;
+}
+
+.email-input:focus-visible {
+  outline: 2px solid #000000;
+  outline-offset: -2px;
+}
+
+.subscribe-button {
+  border-radius: 0 4px 4px 0;;
 }
 
 .page-footer {
@@ -488,29 +515,19 @@ body {
   opacity: 0.3;
 }
 
-.footer-logo-icon:hover path,
-.footer-logo-icon:focus-visible path {
+.html-academy-logo:hover path,
+.html-academy-logo:focus-visible path {
   fill: #756157;
 }
 
-.footer-logo-icon:active {
+.html-academy-logo:active {
   opacity: 0.3;
 }
 
 .inner-header {
-  padding: 35px 70px;
+  padding: 35px 70px 70px;
   color: #ffffff;
   background: #2c6388 url(../images/filters-background.jpg) no-repeat center / cover;
-}
-
-.filters-form-title {
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 700;
-}
-
-.filters-form {
-  display: flex;
 }
 
 .breadcrumbs {
@@ -554,6 +571,33 @@ body {
   background-size: 13px 21px;
 }
 
+.filters-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filters-form-group {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.filters-form-group:not(:last-child) {
+  margin-right: 70px;
+}
+
+.filters-form .form-column {
+  display: flex;
+  max-width: 550px;
+}
+
+.filters-form-title {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
 .filters-form-list {
   margin: 0;
   padding: 0;
@@ -561,18 +605,165 @@ body {
 
 .filters-form-item {
   list-style: none;
+  margin-bottom: 16px;
 }
 
-.text-input {
+.filters-form-item:last-child {
+  margin-bottom: 0;
+}
+
+.control {
+  position: relative;
+  display: block;
+  padding-left: 36px;
+  cursor: pointer;
+  transition: opacity 0.5s;
+}
+
+.control-mark {
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+
+.control:hover {
+  opacity: 0.6;
+}
+
+.control:active .control-mark,
+.control:active .control-label {
+  opacity: 0.3;
+}
+
+.control-input:focus-visible + .control-mark{
+  outline: 2px solid #000000;
+
+}
+
+.control-input[type="checkbox"]:checked + .control-mark::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 4px;
+  width: 13px;
+  height: 10px;
+  background-image: url(../images/icons/check-mark.svg);
+}
+
+.control-input[type="radio"] + .control-mark {
+  border-radius: 50%;
+}
+
+.control-input[type="radio"]:checked + .control-mark::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #3f5e72;
+}
+
+.range-wrapper-inputs {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 44px;
+}
+
+.range-wrapper-input {
+  position: relative;
+}
+
+.range-input {
   font-weight: 700;
   color: #000000;
   font-size: 18px;
   line-height: 24px;
   font-family: inherit;
+  width: 143px;
+  padding: 12px 40px 12px 20px;
+  border: none;
+  -moz-appearance: textfield;
+}
+
+.range-input::-webkit-outer-spin-button,
+.range-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.range-input-min {
+  border-radius: 4px 0 0 4px;
+}
+
+.range-input-max {
+  border-radius: 0 4px 4px 0;
+}
+
+.range-input-label {
+  color: rgba(0, 0, 0, 0.3);
+  line-height: 24px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.range-scale {
+  position: relative;
+  height: 4px;
+  margin-bottom: 16px;
+  background-color: #5e676d;
+  width: 287px;
+}
+
+.range-bar {
+  position: absolute;
+  height: 4px;
+  background-color: #ffffff;
+}
+
+.range-toggle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.range-toggle:active {
+  outline: 2px solid #82b3d3;
+}
+
+.toggle-min {
+  top: -8px;
+  left: 0;
+}
+
+.toggle-max {
+  top: -8px;
+  right: 0;
+}
+
+.filters-form-group-buttons {
+  padding-top: 56px;
+}
+
+.filters-submit-button {
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 32px;
 }
 
 .filters-reset-button {
   background-color: transparent;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .select-control {
@@ -597,6 +788,16 @@ body {
 
 .catalog-header .select-control {
   margin-right: 70px;
+  padding: 12px 83px 12px 20px;
+  border: 2px solid #E5E5E5;
+  border-radius: 4px;
+  appearance: none;
+  position: relative;
+  background-image: url(../images/icons/arrow-down.svg);
+  background-repeat: no-repeat;
+  background-size: 12px 7px;
+  background-position: right 21px center;
+  cursor: pointer;
 }
 
 .catalog-view-list {
@@ -608,15 +809,12 @@ body {
   gap: 8px;
 }
 
-.catalog-view-item {}
-
 .view-button {
   color: inherit;
   display: block;
   width: 48px;
   height: 48px;
   padding: 17px 16px;
-  margin-bottom: 10px;
   background-repeat: no-repeat;
   background-size: 16px 14px;
   background-position: center;
@@ -640,11 +838,6 @@ body {
 .view-button:hover,
 .view-button:active {
   border-color: #000000;
-}
-
-.view-button:focus-visible {
-  outline: none;
-  border-color: #68A2CA;
 }
 
 .hotels-list {
@@ -678,6 +871,7 @@ body {
 
 .hotel-card a {
   text-decoration: none;
+  width: fit-content;
 }
 
 .hotel-card-image {
@@ -688,6 +882,13 @@ body {
 .hotel-card p,
 .hotel-card button {
   margin: 0;
+}
+
+.hotel-card .button {
+  width: 140px;
+  padding: 8px 15px;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .hotel-card-stars {
@@ -726,9 +927,11 @@ body {
   font-size: 16px;
   line-height: 20px;
   text-transform: uppercase;
+  text-align: center;
   background-color: #F2F2F2;
   display: inline-block;
-  padding: 8px 22px;
+  padding: 8px 15px;
+  width: 140px;
   margin: 0;
 }
 
@@ -753,6 +956,7 @@ body {
   text-align: center;
   padding: 11px 10px 0;
   transition: background-color 0.5s ease;
+  border-radius: 4px;
 }
 
 .pagination-link:hover,
