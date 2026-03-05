@@ -91,7 +91,8 @@
                   <ul class="filters-form-list">
                     <li class="filters-form-item">
                       <label class="control">
-                        <input class="visually-hidden control-input" type="radio" name="type-of-housing" value="hotel" checked>
+                        <input class="visually-hidden control-input" type="radio" name="type-of-housing" value="hotel"
+                          checked>
                         <span class="control-mark"></span>
                         <span class="control-label">Гостиница</span>
                       </label>
@@ -105,7 +106,8 @@
                     </li>
                     <li class="filters-form-item">
                       <label class="control">
-                        <input class="visually-hidden control-input" type="radio" name="type-of-housing" value="appartments">
+                        <input class="visually-hidden control-input" type="radio" name="type-of-housing"
+                          value="appartments">
                         <span class="control-mark"></span>
                         <span class="control-label">Аппартаменты</span>
                       </label>
@@ -120,11 +122,13 @@
                     <div class="range-wrapper-inputs">
                       <div class="range-wrapper-input">
                         <label class="range-input-label" for="min-price">от</label>
-                        <input class="range-input range-input-min" type="number" value="0" name="min-price" id="min-price">
+                        <input class="range-input range-input-min" type="number" value="0" name="min-price"
+                          id="min-price">
                       </div>
                       <div class="range-wrapper-input">
                         <label class="range-input-label" for="max-price">до</label>
-                        <input class="range-input range-input-max" type="number" value="9000" name="max-price" id="max-price">
+                        <input class="range-input range-input-max" type="number" value="9000" name="max-price"
+                          id="max-price">
                       </div>
                     </div>
                     <div class="range-scale">
@@ -367,6 +371,63 @@
           </a>
         </section>
       </footer>
+      <div class="modal-overlay modal-overlay-close">
+        <div class="modal modal-hotel-search">
+          <button class="modal-close-button">
+            <span class="visually-hidden">Закрыть</span>
+          </button>
+          <section class="modal-content">
+            <h2 class="modal-title">Поиск гостиницы в Седоне</h2>
+            <form class="search-form">
+              <div class="field-group">
+                <label class="field-label" for="check-in">Дата Заезда:</label>
+                <div class="input-wrapper">
+                  <input class="field date" type="text" id="check-in" placeholder="Укажите дату" value="27 апреля 2020">
+                  <p class="message error-text">Мы не можем отправить вас в прошлое.</p>
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label class="field-label" for="check-out">Дата Выезда:</label>
+                <div class="input-wrapper">
+                  <input class="field date" type="text" id="check-out" placeholder="Укажите дату"
+                    value="1 сентября 2023">
+                  <p class="message info-text">На эти даты есть свободные номера. Пока есть.</p>
+                </div>
+              </div>
+
+              <div class="field-group guest-counters">
+                <div class="guest-counter">
+                  <label class="field-label" for="adults">Взрослые:</label>
+                  <div class="counter-controls">
+                    <button type="button" class="minus"></button>
+                    <input class="field" id="adults" type="number" placeholder="1" value="2">
+                    <button type="button" class="plus"></button>
+                  </div>
+                </div>
+                <div class="guest-counter">
+                  <div class="with-tooltip">
+                    <label class="field-label" for="children">Дети:</label>
+                    <div class="tooltip-container">
+                      <span class="tooltip-icon" tabindex="0"></span>
+                      <p class="tooltip-text">
+                        Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет
+                        размещаются бесплатно.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="counter-controls">
+                    <button type="button" class="minus"></button>
+                    <input class="field" id="children" type="number" placeholder="0" value="2">
+                    <button type="button" class="plus"></button>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="button button-second">Найти</button>
+            </form>
+          </section>
+        </div>
+      </div>
     </div>
   </body>
 
