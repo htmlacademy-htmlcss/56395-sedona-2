@@ -869,6 +869,7 @@ body {
   cursor: pointer;
   transition: border-color 0.5s;
   min-width: 292px;
+  background-color: #ffffff;
 }
 
 .select-control:hover {
