@@ -190,6 +190,11 @@ body {
   transition: background-color 0.5s ease;
 }
 
+.navigation-link:active,
+.navigation-icon:active {
+  opacity: 0.3;
+}
+
 .navigation-user .favourites-number {
   font-size: 10px;
   line-height: 10px;
@@ -203,8 +208,10 @@ body {
 }
 
 .navigation-user .navigation-button {
-  margin-left: 20px;
+  display: block;
+  margin: 5px 0 5px 20px;
   min-width: 160px;
+  max-width: 300px;
   padding: 8px 34px;
   font-size: 16px;
   line-height: 20px;
