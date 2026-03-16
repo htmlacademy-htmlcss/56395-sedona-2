@@ -536,12 +536,12 @@ body {
   transition: fill 0.5s;
 }
 
-.social-link:hover .social-icon path,
-.social-link:focus-visible .social-icon path {
+.social-link:hover path,
+.social-link:focus-visible path {
   fill: #68A2CA;
 }
 
-.social-link:active .social-icon path {
+.social-link:active path {
   opacity: 0.3;
 }
 
